@@ -16,3 +16,8 @@ It consists of an encoder E, a feature concatenation module and a decoder G.
 The network employs down-sampling part of U-Net as the encoder E, followed by a global average pooling, which respectively encodes Ii and Ir as feature vectors Fi and Fr. Correspondingly, the decoder G is up-sampling part of U-Net to reconstruct the feature vector.
 
 ![image](https://user-images.githubusercontent.com/112108580/205706419-333fb383-f22f-4419-8875-c416f9f1827a.png)
+
+Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
