@@ -38,5 +38,5 @@ Run the code for training:
 `python train.py`
 
 ## References
-* Shed Various Lights on a Low-Light Image:Multi-Level Enhancement Guided by Arbitrary: arXiv:2101.00813v1 
+* Shed Various Lights on a Low-Light Image:Multi-Level Enhancement Guided by Arbitrary References: arXiv:2101.00813v1 
 
