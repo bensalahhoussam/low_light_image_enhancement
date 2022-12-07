@@ -17,7 +17,10 @@ The network employs down-sampling part of U-Net as the encoder E, followed by a 
 
 ![image](https://user-images.githubusercontent.com/112108580/205706419-333fb383-f22f-4419-8875-c416f9f1827a.png)
 
-* Bullet list
-   * Nested bullet
-          * Sub-nested bullet etc
-* Bullet list item 2
+## Dependencies
+* Python 3
+* Tensorflow 2.x
+* Numpy
+* Matplotlib
+* TQDM
+* OpenCV
