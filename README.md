@@ -32,7 +32,7 @@ You can also download the dataset from
 * Low link:https://drive.google.com/file/d/1jiO810sQgmkRDMxwRmSWImJOKh9gG3-p/view?usp=sharing
 * High link:https://drive.google.com/file/d/1QjsfY7fODsM_RkJxMO_no9VGachuivhk/view?usp=sharing
 ## Training 
-To train the model, modify the training parameters in 
+To train the model, modify the training parameters in "argument.py"
 
 Run the code for training: 
   python train.py
