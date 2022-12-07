@@ -26,3 +26,8 @@ The network employs down-sampling part of U-Net as the encoder E, followed by a 
 * OpenCV
 ## Data Preparation 
 LOL dataset is involved in training. It consists of 1000 image pairs, where each pair contains a low-light image and its corresponding normal-light image. 
+
+### Download 
+You can also download the dataset from 
+Low link:https://drive.google.com/file/d/1jiO810sQgmkRDMxwRmSWImJOKh9gG3-p/view?usp=sharing
+High link:https://drive.google.com/file/d/1QjsfY7fODsM_RkJxMO_no9VGachuivhk/view?usp=sharing
