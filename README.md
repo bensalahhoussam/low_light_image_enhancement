@@ -24,3 +24,5 @@ The network employs down-sampling part of U-Net as the encoder E, followed by a 
 * Matplotlib
 * TQDM
 * OpenCV
+## Data Preparation 
+LOL dataset is involved in training. It consists of 1000 image pairs, where each pair contains a low-light image and its corresponding normal-light image. 
