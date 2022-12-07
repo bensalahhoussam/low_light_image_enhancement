@@ -31,3 +31,11 @@ LOL dataset is involved in training. It consists of 1000 image pairs, where each
 You can also download the dataset from 
 * Low link:https://drive.google.com/file/d/1jiO810sQgmkRDMxwRmSWImJOKh9gG3-p/view?usp=sharing
 * High link:https://drive.google.com/file/d/1QjsfY7fODsM_RkJxMO_no9VGachuivhk/view?usp=sharing
+## Training 
+To train the model, modify the training parameters in 
+
+Run the code for training: 
+  python train.py
+
+
+
