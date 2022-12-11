@@ -47,7 +47,42 @@ def train_data_for_one_epoch():
 
     return losses
 
+def plot_history(losses,num_epoch):
+    x=list(range(num_epoch))
+    plt.figure(figsize=(10,10))
+    plt.plot(x, losses,label='loss',color='green',marker='o')
+    plt.xlabel("epoch")
+    plt.ylabel("loss")
+    plt.savefig('loss.png')
+    
+    
+def evaluation(model_path,epoch):
+    path1, path2 = load_dataset(low_data, high_data)
+    model = load_model(model_path)
+    numper = np.random.randint(0, 1000,size=2)
 
+    low_light ,reference = image_preprocessing(path1[numper[0]], path2[numper[1]])
+    low_light = tf.expand_dims(low_light, axis=0)
+    reference  = tf.expand_dims(reference , axis=0)
+    reconstructed_image  = model([low_light, reference])
+
+    low_light=(tf.squeeze(low_light,axis=0))
+    reference=(tf.squeeze(reference,axis=0))
+    reconstructed_image=(tf.squeeze(reconstructed_image,axis=0))
+
+    plt.figure(figsize=(10,10))
+    plt.subplot(1,3,1)
+    plt.imshow(low_light)
+    plt.xlabel("low_light")
+    plt.subplot(1, 3, 2)
+    plt.imshow(reference)
+    plt.xlabel("reference")
+    plt.subplot(1, 3, 3)
+    plt.imshow(reconstructed_image)
+    plt.xlabel("reconstructed_image")
+    plt.savefig(f"/content/model_weights/epoch_{epoch}/image_{epoch}.png")
+    
+    
 def training_fit(epochs):
     epochs_losses = []
     for epoch in range(epochs):
@@ -58,10 +93,12 @@ def training_fit(epochs):
         minutes = int(elapsed // 60)
         seconds = int(elapsed % 60)
         epochs_losses.append(np.mean(losses))
-        print(f'Epoch {epoch}: gen_loss: {np.mean(losses):0.3f}  time:({minutes} min {seconds} sec)')
+        print(f'Epoch {epoch}: total_loss: {np.mean(losses):0.3f}  time:({minutes} min {seconds} sec)')
+        if epoch % 10 == 0 :
+            mkdir(f"/content/model_weights/epoch_{epoch}")
+            enhancement_model.save(f"/content/model_weights/epoch_{epoch}/enhancement_model_{epoch}.h5")
+            evaluation(model_path=f"/content/model_weights/epoch_{epoch}/enhancement_model_{epoch}.h5",epoch=epoch)
 
-        os.mkdir(f"model_weights/epoch_{epoch}")
-        enhancement_model.save_weights(f"model_weights/epoch_{epoch}/enhancement_model_{epoch}.h5")
+    plot_history(epochs_losses, epochs)
 
 
-training_fit(args.epochs)
